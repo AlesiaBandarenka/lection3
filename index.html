@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section class = 'slide1'>
+<h1 class = 'first'> Занятие 3 </h1>
+<h2> Created by <span class = 'info'> Alesia Bandarenka </span></h2>
+<h3> e-mail: <span class = 'info'> <a href="mailto:littlecare@mail.ru ">littlecare@mail.ru </a></span></h3>
+<h3>tel:<a href = 'telto'> +375293173310</a></h3>
+<aside class = 'notes'></aside>
+                </section>
+                <section class = 'slide2'>
+<pre><code data-trim data-noescape>
+    "Привет, мир!"
+    </code></pre>
+    <pre><code data-trim data-noescape>
+        let myAwesomeString = "Что-то ОЧЕНЬ крутое!!!";
+        </code></pre>
+        <pre><code data-trim data-noescape>
+            let myThing = 5;
+            myThing = "это строка";
+            </code></pre>
+<aside class = 'notes'>
+    В JavaScript (как и в большинстве
+других языков программирования) строка является набором символов — букв, цифр, знаков пунктуации и пробелов. Чтобы JavaScript знал,
+где начинается и заканчивается строка, ее берут в кавычки.
+ Вот классический пример с фразой «Привет, мир!»:
+ Строки можно хранить в переменных, так же как числа:
+ Также ничто не мешает присвоить строковое значение переменной,
+где раньше хранилось число:
+</aside>
+                </section>
+                <section class = 'slide3'>
+                    <pre><code data-trim data-noescape>
+                        let numberNine = 9;
+                        let stringNine = "9";
+                        </code></pre>
+                        <pre><code data-trim data-noescape>
+                            alert(numberNine + numberNine); //18
+                            alert(stringNine + stringNine); //"99"
+                            alert(numberNine + stringNine); //"99"
+                            </code></pre>
+
+                    <aside class = 'notes'>А что если записать в кавычках число? Строка это будет или число?
+                        В JavaScript строка остается строкой, даже если там хранятся цифровые
+                        символы. Например:
+                        В переменной numberNine (число девять) хранится число, а в переменной stringNine (строка девять) — строка. Чтобы выяснить, в чем их
+различие, посмотрим, как они реагируют на сложение:
+                        Если же мы сложим число и строку в JS, то мы получим строку.
+</aside>
+                </section>
+                <section class="slide4">
+                    <section class = 'slide4-1'>
+                        <h2>Объединение строк</h2>
+    <pre><code data-trim data-noescape>
+        let greeting = "Привет";
+        let myName = "Олеся";
+        console.log(greeting + myName); //"ПриветОлеся"</code></pre>
+<aside class = 'notes'>Как мы только что убедились, оператор +
+    можно использовать и со строками, однако
+    действует он при этом совсем иначе, чем с числами. С помощью оператора + строки можно объединять: результатом будет новая строка,
+    состоящая из первой строки, к концу которой присоединена вторая: 
+    Здесь мы создали две переменные (greeting и myName) и присвоили
+каждой из них строковое значение ("Привет" и "Ник" соответственно).
+При сложении этих переменных строки объединяются, образуя новую
+строку — "ПриветНик".
+Впрочем, не все тут идеально — между "Привет" и "Ник" должен
+стоять пробел и запятая. JavaScript не ставит пробелов по собственной
+инициативе, зато его можно попрДополнительный пробел перед закрывающей кавычкой в строке 
+дает пробел в середине результирующей строки.
+Помимо их объединения, со строками можно выполнять множество
+разных действий. Вот несколько примеров.
+</aside>
+                    </section>
+                <section class = 'slide4-2'>
+                    <h2>Как узнать длину строки</h2>
+                    <p>Чтобы узнать длину строки, достаточно добавить к ее концу .length:</p>
+                    <pre><code data-trim data-noescape>
+						"Суперпупердлиннаястрока".length; // 23</code></pre>
+						<pre><code data-trim data-noescape>
+                            let java = "Java";
+                            java.length; //4
+                            let script = "Script";
+                            script.length; //6
+                            let javascript = java + script;
+                            javascript.length; // 10 </code></pre>
+                    <aside class = 'notes'>Можно добавлять .length к концу как самой строки, так и переменной, содержащей строку:
+							</section>
+							<section class='slide4-3'>
+								<h2>Получение отдельного символа строки</h2>
+								<pre><code data-trim data-noescape>
+									let myName = "Олеся";
+									myName[0]; //"О"
+									myName[1]; //"л"
+									myName[2]; //"е"
+									myName[3]; //"с"
+									myName[4]; //"я"
+								</code></pre></code>
+								<aside class = 'notes'>Иногда требуется получить из строки одиночный символ. Например, вы
+									можете зашифровать в наборе слов тайное посланиее, состоящее из вторых символов каждого слова. Тогда, чтобы узнать это послание, нужно
+									получить все вторые символы и объединить их в новую строку. Чтобы получить символ, стоящий в определенной позиции строки,
+									используйте квадратные скобки — []. Возьмите строку (или переменную, в которой хранится строка) и поставьте сразу после нее квадратные
+									скобки, в которых указана позиция нужного символа</aside>
+							</section>
+							<section class='slide4-4'>
+								<pre><code data-trim data-noescape>
+									let codeWord1 = "обернись";
+									let codeWord2 = "неужели";
+									let codeWord3 = "огурцы";
+									let codeWord4 = "липкие";
+									let codeWord5 = "?!";
+									codeWord1[1] + codeWord2[1] + codeWord3[1] + codeWord4[1] + codeWord5[1];
+								//беги!
+								</code></pre></code>
+								<img src="images/angryCucumber.jpg" width = "350" height = "300">
+								<aside class = 'notes'>Обратите внимание — чтобы получить первый символ, мы указали
+									в скобках позицию 0, а не 1. Дело в том, что JavaScript (как и многие
+									другие языки программирования) ведет отсчет символов с нуля. Таким
+									образом, для получения первого символа строки указывайте позицию 0,
+									второго — 1 и т. д.
+									Попробуем разгадать наш тайный шифр, где во вторых буквах некоторого набора слов скрыто послание. Вот как это сделать:
+									</aside>
+							</section>
+							<section class='slide4-5'>
+								<h2>Получение среза строки</h2>
+								<h3>slice</h3>
+								<img src="images/slice.png" width = '750' length = '350'>
+								<aside class = 'notes'>Чтобы получить часть, или «срез», строки, используйте slice. 
+									 Чтобы воспользоваться slice, поставьте в конце
+									строки (или переменной, содержащей строку) точку, а после нее слово
+									slice и круглые скобки. В скобках укажите позицию первого символа
+									той части строки, которую вы хотите получить, затем запятую, а затем
+									позицию последнего символа. </aside>
+							</section>
+							<section class='slide4-6'>
+								<pre><code data-trim data-noescape>
+									let longString = "Эта длинная строка такая длинная";
+longString.slice(4, 18); //"длинная строка"
+								</code></pre></code>
+								<img src="images/longString.png" width = '1500' height = '100'>
+								<pre><code data-trim data-noescape>
+									let longString = "Эта длинная строка такая длинная";
+									longString.slice(4);
+									"длинная строка такая длинная"
+								</code></pre></code>
+								<aside class = 'notes'>Первое число в скобках — позиция символа, с которого начинается
+									срез, а второе число — позиция символа, который следует за последним
+									символом среза. По сути, мы попросили JavaScript: «Вырежи из этой длинной строки
+									часть, которая начинается с символа в позиции 4 и продолжается
+									до позиции 18».
+									Если указать в скобках после slice только одно число, мы получим
+									строку-срез, которая начинается с данной позиции и длится до конца строки:</aside>
+							</section>
+							<section class='slide4-7'>
+								<h3>Перевод строки в заглавный или строчный регистр</h3>
+								<p>Если нужно вывести какой-нибудь текст заглавными буквами, воспользуйтесь toUpperCase</p>
+								<pre><code data-trim data-noescape>
+									"Эй, как дела?".toUpperCase(); //"ЭЙ, КАК ДЕЛА?"
+								</code></pre>
+								<p>Можно произвести и обратную операцию, использовав toLowerCase:</p>
+								<pre><code data-trim data-noescape>
+									"эЙ, кАК деЛа?".toLowerCase(); //"эй, как дела?"
+								</code></pre>
+							</section>
+				</section>
+				<section class="slide5">
+                    <section class = 'slide5-1'>
+						<h2>Булевы операторы</h2>
+						<h3>Три основных булевых оператора — это <b>&&</b>, <b>||</b> и <b>!</b>. </h3>
+						<aside class = 'notes'>Подобно тому как числа можно объединять с помощью математических
+							операторов (+, −, *, / и других), булевы значения можно объединять
+							посредством булевых (логических) операторов. Результатом выражения,
+							составленного из булевых значений и булевых операторов, всегда будет
+							другое булево значение (либо true, либо false).</aside>
+							</section>
+							<section class = 'slide5-2'>
+								<h2>&& (И)</h2>
+								<p>Оператор && означает «и».</p>
+								<pre><code data-trim data-noescape>
+									let hadShower = true;
+									let hasBackpack = false;
+									hadShower && hasBackpack; //false
+								</code></pre>
+								<img src="images/shower.png" width = '150' height = '300'>
+								<aside class='notes'> Вслух его называют «и», либо «и-и», либо «амперсанд-амперсанд» (амперсандом называется символ &). Используйте оператор && с двумя булевыми значениями, когда нужно узнать, равны ли
+									они оба true. Например, перед тем как пойти в школу, вы хотите убедиться, что
+									приняли душ, а также взяли рюкзак. Если оба эти условия истинны
+									(true), можно идти в школу, но если хоть одно ложно (false), вы еще
+									не готовы.</aside>
+									</section>
+								<section class = 'slide5-3'>
+										<h2>|| (ИЛИ)</h2>
+										<p>Оператор || означает «или».</p>
+										<pre><code data-trim data-noescape>
+											let hasApple = true;
+											let hasOrange = false;
+											hasApple || hasOrange; //true
+										</code></pre>
+										<img src="images/appleOrOrange.jpg" width = "550" height="350">
+										<aside class='notes'> Используйте оператор || с двумя булевыми значениями для проверки,
+											что как минимум одно из них равняется true.
+											Предположим, вы снова готовитесь идти в школу и хотите взять
+											с собой к обеду фрукты, причем вам неважно, будет это яблоко, или
+											апельсин, или и то и другое. С помощью JavaScript можно проверить,
+											есть ли у вас хотя бы один из этих плодов:</aside>
+											</section>
+											<section class = 'slide5-4'>
+												<h2>! (НЕ)</h2>
+												<p>Оператор ! означает «не».</p>
+												<p> Используйте этот оператор, чтобы превратить false в true или, наоборот, true в false.</p>
+												<pre><code data-trim data-noescape>
+													let isWeekend = true;
+													let needToShowerToday = !isWeekend;
+													needToShowerToday; //false
+												</code></pre>
+													</section>
+													<section class = 'slide5-5'>
+														<h3>Совмещение логических операторов</h3>
+														<p>Допустим, вам нужно идти в школу, если сегодня не выходной, и вы приняли душ, и у вас с собой есть яблоко или апельсин. Вот как с помощью
+															JavaScript проверить, выполняются ли все эти условия:</p>
+														<pre><code data-trim data-noescape>
+															let isWeekend = false;
+															let hadShower = true;
+															let hasApple = false;
+															let hasOrange = true;
+															let shouldGoToSchool = !isWeekend && hadShower && (hasApple || hasOrange);
+															shouldGoToSchool; //true
+														</code></pre>>
+														<aside class="notes">Операторы дают больше возможностей, если использовать их совместно.В данном случае сегодня не выходной, вы приняли душ, у вас нет
+															с собой яблока, зато есть апельсин — значит, нужно идти в школу.
+															Выражение hasApple || hasOrange записано в скобках, поскольку
+															нам важно убедиться, что эта проверка выполнена в первую очередь.
+															Точно так же как JavaScript выполняет умножение прежде сложения,
+															в логических выражениях он выполняет && прежде ||.</aside>
+													</section>
+				</section>
+													<section class = 'slide6'>
+														<section class='slide6-1'>
+															<h2>Сравнение чисел с помощью булевых значений</h2>
+															<pre><code data-trim data-noescape>
+																let height = 155;
+																let heightRestriction = 150;
+																height > heightRestriction; //true</code></pre>
+															<aside class="notes">Булевы значения можно использовать для проверки чисел, если эта
+																проверка подразумевает простой ответ: да или нет. Например, представьте, что вы работаете в парке развлечений, где один из аттракционов имеет ограничение: туда допускаются посетители ростом
+																не менее 150 см (иначе они могут вывалиться из кабинки!). Когда
+																кто-нибудь хочет прокатиться, он сообщает свой рост, и вам нужно
+																понять, больше названное число или меньше.</aside>
+														</section>
+														<section class='slide6-2'>
+															<pre><code data-trim data-noescape>
+																let height = 150;
+																let heightRestriction = 150;
+																height >= heightRestriction; //true</code></pre>
+																<img src="images/rostomer.jpg" width="300" height="300">
+															<aside class="notes">Нет, посетитель недостаточно высок! Хотя если ограничение
+																по росту — 150 см, наверное, стоит пускать и тех, чей рост в точности
+																равен 150 см? Это нужно исправить. К счастью, в JavaScript есть еще
+																один оператор, >=, что означает «больше или равно».</aside>
+														</section>
+														<section class='slide6-3'>
+															<h2>Равно</h2>
+															<p>Чтобы проверить два числа на точное равенство, используйте тройной знак
+																равенства (===) — это оператор «равно».</p>
+															<pre><code data-trim data-noescape>
+																let mySecretNumber = 5;
+																let sashaGuess = 3;
+																mySecretNumber === sashaGuess; //false
+																let mishaGuess = 7;
+																mySecretNumber === mishaGuess; //false
+																let dimaGuess = 5;
+																mySecretNumber === dimaGuess; //true</code></pre>
+															<aside class="notes">Будьте осторожны, не путайте ===
+																с одиночным знаком равенства (=), поскольку === означает «равны ли эти
+																два числа?», а = означает «положить значение справа в переменную слева».
+																Иначе говоря, === задает вопрос, а = присваивает переменной значение.
+																При использовании = имя переменной должно стоять слева, а значение, которое вы хотите в эту переменную положить, справа. Однако
+																=== служит лишь для проверки двух значений на равенство, поэтому
+																неважно, какое значение с какой стороны стоит.</aside>
+														</section>
+														<section class='slide6-4'>
+															<h2>Двойной знак равенства</h2>
+															<p>В JavaScript есть еще один оператор сравнения (двойное равно, ==), который означает «практически равно». </p>
+															<pre><code data-trim data-noescape>
+																let stringNumber = "5";
+																let actualNumber = 5;
+																stringNumber === actualNumber; //false
+																stringNumber == actualNumber; //true</code></pre>
+															<aside class="notes">Используйте его для проверки двух значений на соответствие друг другу,
+																даже если одно из них строка, а другое — число. Все значения принадлежат к тому или иному типу, так что число 5 отличается от строки «5»,
+																хоть они и выглядят похоже. Если сравнить их с помощью ===, JavaScript
+																ответит, что значения не равны. Однако при сравнении через == они окажутся равными:</aside>
+														</section>
+														<section class='slide6-5'>
+															<h2>Будьте осторожны!</h2>
+															<p> При сравнении через двойное равно 0 оказывается равным false, а строка "false" не равна false: </p>
+															<pre><code data-trim data-noescape>
+																0 == false; //true
+																"false" == false; //false</code></pre>
+															<aside class="notes">Дело в том, что, сравнивая значения через двойное равно, JavaScript первым делом пытается преобразовать их к одному типу. В данном случае булево
+																значение он преобразует в числовое — при этом false становится нулем,
+																а true — единицей. Поэтому, сравнивая 0 == false, вы получите true!
+																Из-за всех этих странностей лучше пока пользуйтесь только оператором ===. </aside>
+														</section>
+													</section>
+													<section data-transition = 'slide7'>
+														<h1>Спасибо за внимание!</h1>
+														<img src="images/7SvE.gif" height="300" width="300">
+														<aside class = 'notes'>Я надеюсь вы не слишком устали и хоть что-то запомнили. Спасибо за внимание! Вопрсы?</aside>
+													</section>
+                            </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
